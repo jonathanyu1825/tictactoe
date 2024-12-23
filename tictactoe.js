@@ -1,6 +1,14 @@
 let cells = document.getElementsByClassName("cell");
+let gameContainer = document.getElementById("game-container");
 let board = document.getElementsByClassName("grid-container")[0];
+let gameOverMessageTemp = document.getElementById("over-message");
+let gameOverMessage = gameOverMessageTemp.cloneNode(true);
+gameOverMessageTemp.remove();
 let cur = "X"
+let color = {
+    "X": "red",
+    "O": "blue"
+};
 let rows = 3, columns = 3;
 let grid = []
 for (let r = 0; r < rows; r++) {
@@ -18,12 +26,12 @@ for (let i = 0; i < rows * columns; i++) {
 }
 function addMark(row, col) {
     let selectedCell = grid[row][col];
-    console.log(row);
-    console.log(col);
     if (selectedCell.innerHTML == "") {
         selectedCell.innerHTML = cur;
+        // selectedCell.innerHTML.style.color = color[cur];
         if (gameLogic(row, col)) {
             board.classList.add('gameOver');
+            messageSwitch();
         }
         cur = (cur === "X") ? "O": "X";
     }
@@ -70,4 +78,8 @@ function checkDiagonal() {
         }
     }
     return dg1 || dg2;
+}
+
+function messageSwitch() {
+    gameContainer.appendChild(gameOverMessage);
 }

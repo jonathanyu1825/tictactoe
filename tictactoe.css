@@ -20,13 +20,23 @@ body {
     grid-template-rows: 100px 100px 100px;
 }
 
-/* #game-container {
+#game-container {
     border: solid yellow 2px;
-} */
+    position: relative;
+}
 #over-message {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
+    display: flex;
+    width: 300px;
     top: 50%;
-    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+}
+
+#over-message > h1 {
+    color: red;
 }
 
 @keyframes fade-out {
@@ -34,7 +44,7 @@ body {
         opacity: 1;
     }
     to {
-        opacity: 0.4;
+        opacity: 0.1;
     }
 }
 

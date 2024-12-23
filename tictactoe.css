@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cell {
+    border: solid 2px;
+    font-size: 80px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+/* #game-container {
+    border: solid yellow 2px;
+} */
+#over-message {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.4;
+    }
+}
+
+.gameOver {
+    animation: fade-out 1s forwards;
+}

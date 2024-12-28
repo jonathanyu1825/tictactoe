@@ -1,0 +1,93 @@
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cell {
+  border: solid 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+
+#game-container {
+  position: relative;
+  margin-top: -50px;
+}
+#over-message {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  display: flex;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  opacity: 0;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fade-out 1s forwards;
+}
+
+.fade-in {
+  animation: fade-in 1.4s forwards;
+}
+#button-holder {
+  margin-top: 30px;
+  /* border: solid black 2px; */
+  display: flex;
+  width: 250px;
+  justify-content: space-around;
+}
+.player-button {
+  border: solid black 2px;
+  height: 40px;
+  border-radius: 3px;
+  box-shadow: 0px 2px 0px 0px black;
+}
+
+#one-player-button {
+  background-color: orangered;
+}
+#two-player-button {
+  background-color: lightblue;
+}
+#restart {
+  height: 36px;
+  cursor: pointer;
+  border: solid black 2px;
+  border-radius: 3px;
+  margin-left: 10px;
+  box-shadow: 0px 2px 0px 0px black;
+}
